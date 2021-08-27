@@ -8,10 +8,10 @@ app.use(express.json());
 let mysql = require('mysql');
 
 let connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'kafer',
-    password: 'password',
-    database: 'dollarcity'
+    host: 'dollarcity-database-instance.c8wjkrp1plog.us-east-2.rds.amazonaws.com',
+    user: 'admin',
+    password: 'asdf1234asdf',
+    database: 'dollarcitydb'
 });
 
 connectBD => {
@@ -43,7 +43,7 @@ app.listen(port, () => {
 
 function storeBD(reqs) {
     for (let i = 0; i < reqs.length; i++) {
-      connection.query('INSERT INTO dollarcity.job_application (name, last_names, email, city, job_title, address, cc, gender, year_experiences, title, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
+      connection.query('INSERT INTO job_application (name, last_names, email, city, job_title, address, cc, gender, year_experiences, title, description) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);',
         [ reqs[i].name, reqs[i].last_names, reqs[i].email, reqs[i].city, reqs[i].job_title, reqs[i].address, reqs[i].cc, reqs[i].gender, reqs[i].year_experiences, reqs[i].title, reqs[i].description],
           function(err, result) {
             if (err) throw err;
