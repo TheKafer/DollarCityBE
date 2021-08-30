@@ -1,4 +1,4 @@
 # DollarCityBE
 Homework of devops
 
-:)
+:((()))
