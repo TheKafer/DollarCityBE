@@ -34,7 +34,7 @@ app.get('/jobApplications', (req, res) => {
 
 app.post('/jobApplications', (req, res) => {
     storeBD(req.body);
-    res.sendStatus(200);
+    res.end();
 });
 
 app.listen(port, () => {
