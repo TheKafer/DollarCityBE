@@ -2,5 +2,3 @@
 Homework of devops
 
 :)
-
-SIUUUUUUUUUUUUUUU
